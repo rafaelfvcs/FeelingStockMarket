@@ -1,0 +1,10 @@
+{% if all_stocks %}
+    <h3>Here are all my stocks: </h3>    
+    <ul>
+        {% for stock in all_stocks %}
+        <li><a href='/stock/{{ stock.id }}'>{{ stock.symbol }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h3> You don't have any stocks! </h3>
+{% endif %}
