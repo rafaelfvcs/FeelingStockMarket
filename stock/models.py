@@ -14,7 +14,7 @@ class Stock(models.Model):
 class Prices(models.Model):
     stock = models.ForeignKey(Stock, on_delete=models.CASCADE) # se del Stock Price vai junto
     prices_type = models.CharField(max_length=20)
-    values = models.DecimalField(max_digits=20,decimal_places=4)
+    prices = models.FileField(upload_to='uploads', max_length=100)
     def __str__(self):
-            return self.stock+' <-> '+self.prices_type
+            return str(self.stock) #+' <-> '+self.prices_type
 

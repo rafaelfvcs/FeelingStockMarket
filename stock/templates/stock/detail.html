@@ -1,1 +1,12 @@
-{{ stock }}
+<img src='{{ stock.company_logo}}'>
+
+<h1> {{stock.company }} </h1>
+
+<h3>{{ stock }}</h3>
+
+<ul>
+    {% for stock in prices.stock_set.all %}
+
+        <li> {{ stock.company }} - {{ stock.symbol }}</li>
+    {% endfor %}
+</ul>

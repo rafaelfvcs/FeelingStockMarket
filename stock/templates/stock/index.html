@@ -2,7 +2,7 @@
     <h3>Here are all my stocks: </h3>    
     <ul>
         {% for stock in all_stocks %}
-        <li><a href='/stock/{{ stock.id }}'>{{ stock.symbol }}</a></li>
+            <li><a href='{% url 'detail' stock.id %}'>{{ stock.symbol }}</a></li> 
         {% endfor %}
     </ul>
 {% else %}
